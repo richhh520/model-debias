@@ -1,4 +1,5 @@
-# This repository contains the source code for Fast Model DeBias via Machine Unlearning
+# Fast Model DeBias via Machine Unlearning
+This repository contains the source code for Fast Model DeBias via Machine Unlearning
 
 ## Toy Example on Linear Models
 
