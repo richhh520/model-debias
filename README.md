@@ -4,7 +4,7 @@ This repository contains the source code for Fast Model DeBias via Machine Unlea
 
 ## Required Datasets
 
-## Toy Example on Linear Models
+## Experiment on Linear Models
 
 ## Experiment on C-MNIST
 
