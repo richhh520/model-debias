@@ -1,27 +1,30 @@
 # Fast Model DeBias via Machine Unlearning
 This repository contains the source code for Fast Model DeBias via Machine Unlearning
 ## Install
-```bash
-git clone https://github.com/
-cd bias-bench 
-python -m pip install -e .
+```
+pip install -r requirement.txt
 ```
 
-## Required Datasets
-Below, a list of the external datasets required by this repository is provided:
+## Dataset
+Construction of Colored MNIST can be referred to https://github.com/clovaai/rebias
+Adult can be loaded via Ai fairness 360 https://github.com/Trusted-AI/AIF360
+CelebA can be downloaded from http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html and follow the preprocessing in group_DRO (https://github.com/kohpangwei/group_DRO)
 
-Dataset | Download Link | Notes | Download Directory
---------|---------------|-------|-------------------
-Wikipedia-2.5 | [Download](https://drive.google.com/file/d/1JSlm8MYDbNjpMPnKbb91T-xZnlWAZmZl/view?usp=sharing) | English Wikipedia dump used for SentenceDebias and INLP. | `data/text`
-Wikipedia-10 | [Download](https://drive.google.com/file/d/1boQTn44RnHdxWeUKQAlRgQ7xrlQ_Glwo/view?usp=sharing) | English Wikipedia dump used for CDA and Dropout. | `data/text`
-
-Each dataset should be downloaded to the specified path, relative to the root directory of the project.
-
+removal files are based on https://github.com/facebookresearch/certified-removal
 ## Experiment on Linear Models
+```
+python linear_removal.py --data-dir  <your_path>/MNIST --verbose --extractor none --dataset MNIST --train-mode binary --std 10 --lam 1e-3 --num-steps 100
+```
 
 ## Experiment on C-MNIST
+```
+python mnist_removal.py --data-dir  <your_path>/MNIST --verbose --extractor none --dataset MNIST --train-mode binary --std 10 --lam 1e-3 --num-steps 100
+```
 
 ## Experiment on CelebA
+```
+python celeba_removal.py --verbose --extractor none  --std 10 --lam 1e-3 --num-steps 100
+```
 
 ## Experiment on LLM
 
